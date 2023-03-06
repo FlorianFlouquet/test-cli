@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:front/main.dart';
+import 'package:front/calcul.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
@@ -26,5 +27,19 @@ void main() {
     // Verify that our counter has incremented.
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
+  });
+
+  group('Multiply function testing', () {
+    test('Simple multiplication', () {
+      final result = multiply(6, 7);
+
+      expect(result, 42, reason: 'Regular multiplication should work');
+      });
+
+    test('Ensure correct handling of zero', () {
+      final result = multiply(13, 0);
+
+      expect(result, 0, reason: 'Multiple with zero should be zero');
+    });
   });
 }
