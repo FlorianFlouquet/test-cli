@@ -48,15 +48,12 @@ jobs:
       - uses: actions/setup-node@v3
         with: 
           node-version: 18
-      - name: npm install, make test-coverage
-        run: |
-          cd back
-          npm install
-          make test-coverage
       - name: Coveralls
         uses: coverallsapp/github-action@v1
       - name: Build
         run: |
+          cd back
+          npm run i
           npm run test
           npm run build
     
