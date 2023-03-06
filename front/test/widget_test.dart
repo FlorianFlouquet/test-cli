@@ -31,7 +31,7 @@ void main() {
 
   group('Multiply function testing', () {
     test('Simple multiplication', () {
-      final result = multiply(8, 7);
+      final result = multiply(6, 7);
 
       expect(result, 42, reason: 'Regular multiplication should work');
     });
