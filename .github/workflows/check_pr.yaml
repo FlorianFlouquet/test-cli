@@ -15,6 +15,8 @@ jobs:
           channel: stable
       - name: Build apk
         run: |
+          ls
+          cd front
           flutter pub get
           flutter format --set-exit-if-changed .
           flutter analyze
