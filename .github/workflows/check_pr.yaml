@@ -50,6 +50,7 @@ jobs:
           node-version: 18
       - name: npm install, make test-coverage
         run: |
+          cd back
           npm install
           make test-coverage
       - name: Coveralls
