@@ -5,5 +5,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup Flutter FVM
+      - uses: actions/checkout@v2
+      - uses: kuhnroyal/flutter-fvm-config-action@v1
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.9.0-1.0.pre.51
+          channel: main
       - name: Run Flutter Test
         run: flutter test
