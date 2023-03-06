@@ -41,17 +41,21 @@ jobs:
           flutter analyze
           flutter test
           flutter build web
-  build-front:
+  build-back:
     runs-on: ubuntu-latest
+    strategy: 
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with: 
-          node-version: 18
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
       - name: Build
         run: |
           cd back
-          npm i
+          npm ci
+          npm run build --if-present
           npm run test
-          npm run build
     
