@@ -34,7 +34,7 @@ void main() {
       final result = multiply(8, 7);
 
       expect(result, 42, reason: 'Regular multiplication should work');
-      });
+    });
 
     test('Ensure correct handling of zero', () {
       final result = multiply(13, 0);
