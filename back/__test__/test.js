@@ -1,4 +1,4 @@
-const { multiply } = require("../calcul");
+const { multiply } = require("../src/calcul");
 
 describe('Tests bidon', () => {
     it('Multiply 6 by 7, must return 42', async() => {
