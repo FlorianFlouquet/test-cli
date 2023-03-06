@@ -3,7 +3,7 @@ on:
     branches: [ main ]
 jobs:
   build:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Run Flutter Test
-      run: flutter test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Flutter Test
+        run: flutter test
