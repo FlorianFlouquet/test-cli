@@ -12,5 +12,8 @@ jobs:
         with:
           flutter-version: 3.9.0-1.0.pre.51
           channel: main
-      - name: Run Flutter Test
-        run: flutter test
+  unit-test:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Run Flutter Test
+          run: flutter test
