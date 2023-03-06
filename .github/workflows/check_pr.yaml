@@ -21,7 +21,7 @@ jobs:
           flutter upgrade
           flutter pub get
           flutter format --set-exit-if-changed .
-          flutter analyse
+          flutter analyze
           flutter test
           flutter build apk --debug
   build-web:
@@ -38,6 +38,6 @@ jobs:
           flutter upgrade
           flutter pub get
           flutter format --set-exit-if-changed .
-          flutter analyse
+          flutter analyze
           flutter test
           flutter build web
