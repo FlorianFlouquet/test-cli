@@ -57,7 +57,8 @@ jobs:
           npm run build --if-present
           npm run test
       - name: Check content
-        run: ls
+        run: |
+          cat ./coverage/lcov.info
       - name: Coveralls
         uses: coverallsapp/github-action@v1
         with: 
