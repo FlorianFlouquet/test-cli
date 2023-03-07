@@ -57,7 +57,7 @@ jobs:
           npm run build --if-present
           npm run test
       - name: Check content
-        run: cat ./back/coverage/lcov.info
+        run: cat ./coverage/lcov.info
       - name: Coveralls
         env:
           NODE_COVERALLS_DEBUG: 1
