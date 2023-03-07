@@ -27,14 +27,13 @@ jobs:
           flutter pub get
           flutter format --set-exit-if-changed .
           flutter analyze
-          flutter test --coverage
-          #Remove generated sources and entities from coverage
-          lcov --remove coverage/lcov.info -o coverage/lcov.info '**/*.g.dart' '**/*.freezed.dart' '**/entities/**' '**/*_state.dart' '**/core/**'
-          #Generate coverage report and expose it in GitHub Pages repository
-          genhtml coverage/lcov.info -o docs/ 
+          flutter test
           flutter build apk --debug
   build-web:
     runs-on: ubuntu-latest
+    defaults: 
+      run:
+        working-directory: front
     steps:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
@@ -42,8 +41,6 @@ jobs:
            flutter-version: '3.7.3'
       - name: Build web
         run: |
-          ls
-          cd front
           flutter upgrade
           flutter pub get
           flutter format --set-exit-if-changed .
@@ -63,8 +60,8 @@ jobs:
       - name: Build
         run: |
           npm ci
-          npm run build --if-present
           npm run test
+          npm run build --if-present
       - name: Check content
         run: cat ./coverage/lcov.info
     
