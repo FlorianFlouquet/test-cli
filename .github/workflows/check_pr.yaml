@@ -23,8 +23,8 @@ jobs:
           sudo apt install lcov 
       - name: Build apk
         run: |
-          flutter pub get
           flutter upgrade
+          flutter pub get
           flutter format --set-exit-if-changed .
           flutter analyze
           flutter test --coverage
