@@ -105,7 +105,6 @@
       "./dist/**/*",
       "babel.config.js",
       "__test__",
-      "/home/runner/work/test-cli/**/*",
       "coverage"
     ]
   }
