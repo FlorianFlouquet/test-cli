@@ -6,6 +6,9 @@ on:
 jobs:
   testing:
     name: Run tests with coverage
+    defaults:
+      run:
+        working-directory: front
     runs-on: ubuntu-20.04 
     steps:
       - uses: actions/checkout@v2
