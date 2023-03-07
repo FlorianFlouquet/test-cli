@@ -48,6 +48,10 @@ jobs:
       - uses: actions/setup-node@v3
         with: 
           node-version: 18
+      - name: move to back
+        run: cd back
+      - name: show content
+        run: ls
       - name: Build
         run: |
           cd back
