@@ -60,6 +60,6 @@ jobs:
       - name: Coveralls
         uses: coverallsapp/github-action@v1
         with: 
-          base-path: ./back
+          path-to-lcov: ./back/coverage/lcov.info
           github-token: ${{ secrets.GITHUB_TOKEN }}
     
