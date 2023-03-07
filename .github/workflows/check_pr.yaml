@@ -24,6 +24,7 @@ jobs:
       - name: Build apk
         run: |
           flutter pub get
+          flutter upgrade
           flutter format --set-exit-if-changed .
           flutter analyze
           flutter test --coverage
