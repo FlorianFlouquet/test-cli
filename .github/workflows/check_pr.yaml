@@ -65,6 +65,6 @@ jobs:
           NODE_COVERALLS_DEBUG: 1
         uses: coverallsapp/github-action@v1
         with: 
-          path-to-lcov: ./coverage/lcov.info
+          path-to-lcov: ./back/coverage/lcov.info
           github-token: ${{ secrets.GITHUB_TOKEN }}
     
