@@ -10,7 +10,7 @@ jobs:
       run:
         working-directory: front
     name: Generate coverage report
-    needs: build-apk
+    # needs: build-apk
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
