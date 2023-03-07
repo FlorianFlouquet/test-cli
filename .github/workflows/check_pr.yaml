@@ -58,7 +58,6 @@ jobs:
           npm run test
       - name: Check content
         run: cat ./coverage/lcov.info
-      - uses: actions/checkout@v3
       - name: Coveralls
         env:
           NODE_COVERALLS_DEBUG: 1
