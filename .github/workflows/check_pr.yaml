@@ -43,6 +43,9 @@ jobs:
           flutter build web
   build-back:
     runs-on: ubuntu-latest
+    defaults: 
+      run:
+        working-directory: back
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -50,13 +53,16 @@ jobs:
           node-version: 18
       - name: Build
         run: |
-          cd back
           npm ci
           npm run build --if-present
           npm run test
-          cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+      - name: Check content
+        run: cat ./coverage/lcov.info
       - name: Coveralls
+        env:
+          NODE_COVERALLS_DEBUG: 1
         uses: coverallsapp/github-action@v1
         with: 
+          path-to-lcov: ./back/coverage/lcov.info
           github-token: ${{ secrets.GITHUB_TOKEN }}
     
