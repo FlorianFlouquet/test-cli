@@ -22,6 +22,7 @@ jobs:
           sudo apt install lcov    
       - name: Run units tests and generate coverage
         run: |
+          flutter upgrade
           flutter pub get
           flutter test --coverage
           #Remove generated sources and entities from coverage
