@@ -56,7 +56,7 @@ jobs:
           npm run test
       - name: Check content
         run: |
-          cd back
+          cd back/coverage
           ls
       - name: Coveralls
         env:
