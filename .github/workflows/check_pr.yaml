@@ -60,9 +60,8 @@ jobs:
         run: |
           cat ./coverage/lcov.info
       - name: Coveralls
-        uses: |
-          ls
-          coverallsapp/github-action@v1
+        uses: coverallsapp/github-action@v1
         with: 
+          base-path: /back
           github-token: ${{ secrets.GITHUB_TOKEN }}
     
