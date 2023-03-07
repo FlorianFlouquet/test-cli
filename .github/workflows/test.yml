@@ -1,4 +1,4 @@
-name: Run all tests and coverage reporting
+name: Run all tests and coverage reporting 
 on:
   push:
     branches:
