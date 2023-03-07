@@ -43,9 +43,6 @@ jobs:
           flutter build web
   build-back:
     runs-on: ubuntu-latest
-    defaults:
-      run: 
-        working-directory: ./back
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -53,15 +50,16 @@ jobs:
           node-version: 18
       - name: Build
         run: |
+          cd back
           npm ci
           npm run build --if-present
           npm run test
       - name: Check content
         run: |
-          cat ./coverage/lcov.info
+          cat ./back/coverage/lcov.info
       - name: Coveralls
         uses: coverallsapp/github-action@v1
         with: 
-          base-path: /back
+          base-path: ./back
           github-token: ${{ secrets.GITHUB_TOKEN }}
     
