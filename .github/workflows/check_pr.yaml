@@ -67,12 +67,10 @@ jobs:
       # ... Generate LCOV files or download it from a different job
       - name: Setup LCOV
         uses: hrishikesh-kadam/setup-lcov@v1
-      - name: genhtml
-        run: genhtml --config-file ./coverage/lcov.info
       - name: Report code coverage
         uses: zgosalvez/github-actions-report-lcov@v3
         with:
-          coverage-files: ./coverage/lcov.info
+          coverage-files: ./back/coverage/lcov.info
           minimum-coverage: 0
           artifact-name: code-coverage-report
           github-token: ${{ secrets.GITHUB_TOKEN }}
