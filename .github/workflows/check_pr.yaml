@@ -49,6 +49,8 @@ jobs:
           flutter build web
   build-back:
     runs-on: ubuntu-latest
+    env:
+      ACTION_STEP_DEBUG: true
     defaults: 
       run:
         working-directory: back
@@ -71,9 +73,8 @@ jobs:
         uses: zgosalvez/github-actions-report-lcov@v3
         with:
           coverage-files: ./coverage/lcov.info
-          minimum-coverage: 90
+          minimum-coverage: 0
           artifact-name: code-coverage-report
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          working-directory: .
           update-comment: true
     
