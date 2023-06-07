@@ -1,0 +1,13 @@
+on:
+  release:
+    types: [published]
+
+jobs:
+  test-on-release:
+    name: Test release workflow
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v1
+      - name: show text in console
+        run: |
+          echo hello, world
