@@ -7,6 +7,7 @@ on:
 jobs:
   on-failure:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
       - uses: actions/checkout@v1
       - name: show text in console
@@ -14,6 +15,7 @@ jobs:
           echo "Le workflow précédent a fail"
   on-success:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v1
       - name: show text in console
