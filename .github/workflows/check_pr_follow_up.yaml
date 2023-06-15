@@ -1,0 +1,14 @@
+on:
+  workflow_run:
+    workflows:
+      - Test1
+    types:
+      - completed
+jobs:
+  wait_and_echo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: show text in console
+        run: |
+          echo "ceci est un message"
